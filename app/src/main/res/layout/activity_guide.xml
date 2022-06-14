@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuideAct"
+    android:background="@color/white_blue">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:id="@+id/text1Guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link App which you can use ">
+    </TextView>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_below="@id/text1Guide"
+        android:gravity="center"
+        android:id="@+id/text2Guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="to store your useful links">
+    </TextView>
+
+    <VideoView
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20dp"
+        android:layout_below="@id/text2Guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoView">
+    </VideoView>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tap to start video"
+        android:textSize="20dp"
+        android:layout_below="@id/videoView"
+        android:layout_marginBottom="10dp">
+    </TextView>
+
+</RelativeLayout>

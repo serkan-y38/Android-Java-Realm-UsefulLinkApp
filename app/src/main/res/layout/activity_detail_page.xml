@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailPageAct"
+    android:background="@color/white_blue">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:background="@drawable/back_graund1"
+                android:layout_margin="20dp"
+                android:id="@+id/webViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="375dp">
+
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp">
+                </WebView>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/webViewLayout"
+                android:id="@+id/linearDetail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="25dp"
+                        android:textSize="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Link Name:">
+                    </TextView>
+
+                    <EditText
+                        android:textColor="@color/text_color"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/linkNameDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="25dp"
+                        android:textSize="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Link Topic:">
+                    </TextView>
+
+                    <EditText
+                        android:textColor="@color/text_color"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/linkTopicDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+                    </EditText>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="25dp"
+                        android:textSize="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Link:">
+                    </TextView>
+
+                    <EditText
+                        android:textColor="@color/text_color"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/linkDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5">
+                    </EditText>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/linkDefDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearDetail"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:inputType="textMultiLine"
+                android:text="definition about link"
+                android:textColor="@color/text_color"
+                android:textSize="20dp">
+            </EditText>
+
+        </RelativeLayout>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:hapticFeedbackEnabled="true"
+            android:outlineAmbientShadowColor="@color/toolbar_color"
+            app:fab_colorNormal="@color/toolbar_color"
+            app:fab_addButtonColorPressed="@color/toolbar_color"
+            app:fab_expandDirection="up"
+            app:fab_labelStyle="@drawable/ic_baseline_add"
+            app:fab_labelsPosition="left"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/goLinkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                app:fab_colorDisabled="@color/blue"
+                app:fab_colorNormal="@color/blue"
+                app:fab_icon="@drawable/ic_baseline_web_24"
+                app:fab_size="mini"
+                app:fab_title="Go Link" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/deleteFloating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                app:fab_colorDisabled="@color/blue"
+                app:fab_colorNormal="@color/blue"
+                app:fab_icon="@drawable/ic_baseline_delete_white"
+                app:fab_size="mini"
+                app:fab_title="Delete" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/updateFloating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:fab_colorDisabled="@color/blue"
+                app:fab_colorNormal="@color/blue"
+                app:fab_icon="@drawable/ic_baseline_update_24"
+                app:fab_size="mini"
+                app:fab_title="Update Now" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </RelativeLayout>
+
+</ScrollView>

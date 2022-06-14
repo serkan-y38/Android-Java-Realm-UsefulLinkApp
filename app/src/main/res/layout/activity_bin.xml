@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BinAct"
+    android:background="@color/white_blue">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listViewBin"
+        tools:listitem="@layout/bin_list_item">
+    </ListView>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/goEntranceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_colorNormal="@color/toolbar_color"
+        android:src="@drawable/ic_baseline_keyboard_backspace_24"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        app:rippleColor="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewAct"
+    android:background="@color/white_blue">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/toolbar_color"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:textSize="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Link Name:">
+            </TextView>
+
+            <EditText
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/linkNameAdd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Link Name (required)">
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:textSize="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Link Topic:">
+            </TextView>
+
+            <EditText
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/linkTopicAdd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Link Topic (optional)">
+            </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginTop="25dp"
+                android:textSize="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Link:">
+            </TextView>
+
+            <EditText
+                android:textSize="18dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/linkAdd"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:hint="Paste Link Here (required)">
+            </EditText>
+
+        </LinearLayout>
+
+        <EditText
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            android:inputType="textMultiLine"
+            android:id="@+id/linkDefAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Link Definition (required)">
+        </EditText>
+
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/addLinkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_icon="@drawable/ic_baseline_add"
+        app:fab_colorNormal="@color/toolbar_color"
+        android:outlineSpotShadowColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        app:rippleColor="@color/white"
+        android:layout_above="@id/bottomNavigation"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="10dp"/>
+
+</RelativeLayout>
