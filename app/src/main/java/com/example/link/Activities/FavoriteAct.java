@@ -41,7 +41,7 @@ public class FavoriteAct extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_favorite_link, menu);
+        inflater.inflate(R.menu.favorite_act_menu, menu);
         MenuItem searchViewItem = menu.findItem(R.id.searchFav);
 
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
@@ -94,18 +94,20 @@ public class FavoriteAct extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.favoriteNavigation:
-                        return true;
 
                     case (R.id.homeNavigation):
                         Intent inten=new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(inten);
                         overridePendingTransition(0,0);
+                        break;
 
                     case R.id.addNewNavigation:
                         Intent intent=new Intent(getApplicationContext(),AddNewAct.class);
                         startActivity(intent);
-                        overridePendingTransition(0,0);                }
+                        overridePendingTransition(0,0);
+                        break;
+
+                }
 
                 return false;
             }

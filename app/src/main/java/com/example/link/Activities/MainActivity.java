@@ -1,21 +1,29 @@
 package com.example.link;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 
+import android.Manifest;
 import android.content.Intent;
-import android.net.Uri;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Adapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -23,6 +31,7 @@ import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<LinkModel> array=new ArrayList<>();
     ListView listView;
     ArrayList<LinkModel> listModel=new ArrayList<>();
     Realm realm;
@@ -39,15 +48,17 @@ public class MainActivity extends AppCompatActivity {
 
         showAllLink();
         createNav();
+
     }
 
-    // set search item -----------------------------------------------------------------------------
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.search_all_links, menu);
+        inflater.inflate(R.menu.main_act_menu, menu);
         MenuItem searchViewItem = menu.findItem(R.id.searchAll);
+        MenuItem backupItem=menu.findItem(R.id.backupMenu);
 
         final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchViewItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -69,8 +80,62 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        backupItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+
+                if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ){
+                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,},100);
+                }
+                else {
+                    RealmResults<LinkModel> models = realm.where(LinkModel.class).findAll();
+                    String fileName = "LinkApp.txt";
+                    File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
+
+                    FileOutputStream fileOutputStream = null;
+                    try {
+                        fileOutputStream = new FileOutputStream(file);
+                        for (LinkModel m : models) {
+                            String convert = "Linkname: " + m.getLinkname() + "\n"
+                                    + "Linktopic: " + m.getLinktopic() + "\n"
+                                    + "Link: " + m.getLink() + "\n"
+                                    + "Linkdate: " + m.getLinkdate() + "\n"
+                                    + "Definition: " + m.getLinkdefinition() + "\n"
+                                    + "***************************************\n";
+                            fileOutputStream.write(convert.getBytes());
+                        }
+                        fileOutputStream.close();
+                        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                return false;
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode){
+            case 100:
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(getApplicationContext(),"Permission Allowed, data will back up your device",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"Permission Denied, Permission is necessary to back up data, please allow the permission",Toast.LENGTH_LONG).show();
+                }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
 
     private void filter(String text) {
 
@@ -87,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
             adp.filterList(filteredlist);
         }
     }
-    // set search item -----------------------------------------------------------------------------
 
 
     //set bottom nav -------------------------------------------------------------------------------

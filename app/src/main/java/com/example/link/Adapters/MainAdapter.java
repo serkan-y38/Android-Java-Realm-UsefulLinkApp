@@ -93,8 +93,8 @@ public class MainAdapter extends BaseAdapter {
                 }
                 else if(status.equals("1")) {
                     updateLinkStatus(linkDate,"0");
-                    //addfavBtn.setBackgroundResource(R.drawable.ic_baseline_star_24);
                     deleteFavDb(linkDate);
+                    addfavBtn.setBackgroundResource(R.drawable.ic_baseline_star_24);
                     Toast.makeText(context.getApplicationContext(),"Link Was deleted From Favorite list",Toast.LENGTH_SHORT).show();
 
                 }

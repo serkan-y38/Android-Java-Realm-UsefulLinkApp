@@ -1,4 +1,6 @@
 package com.example.link;
+import static io.realm.Realm.getApplicationContext;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -68,6 +70,7 @@ public class FavAdapter extends BaseAdapter {
                         FavModel model=realm.where(FavModel.class).equalTo("linkdate",date).findFirst();
                         model.deleteFromRealm();
                         Toast.makeText(context.getApplicationContext(),"Link Was Marked As Unfavorite Successfully",Toast.LENGTH_SHORT).show();
+                        refresh();
                     }
                 });
             }
@@ -96,5 +99,11 @@ public class FavAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
     //search item func -----------------------------------------------------------------------------
+
+    public void refresh(){
+        Intent intent=new Intent(getApplicationContext(),FavoriteAct.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
 
 }
