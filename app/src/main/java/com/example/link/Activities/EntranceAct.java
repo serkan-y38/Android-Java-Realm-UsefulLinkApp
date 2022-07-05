@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.link.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class EntranceAct extends AppCompatActivity {
@@ -86,7 +87,7 @@ public class EntranceAct extends AppCompatActivity {
                     case R.id.HelpDrawer:{
                         Toast.makeText(getApplicationContext(), "Please Describe Your Issue", Toast.LENGTH_LONG).show();
 
-                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"+"yilmzsrkn@gmail.com" ));
+                        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"+"@gmail.com" ));
                         String subject="Please describe your issue here";
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
                         startActivity(Intent.createChooser(emailIntent, "Chooser Title"));

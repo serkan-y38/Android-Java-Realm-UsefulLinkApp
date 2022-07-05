@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EntranceAct"
+    tools:context=".Activities.EntranceAct"
     android:id="@+id/drawerLayout"
     tools:ignore="HardcodedText">
 
@@ -26,13 +26,16 @@
             android:layout_weight="1"
             android:orientation="horizontal">
 
+
             <RelativeLayout
+
                 android:id="@+id/goAllLinkLayout"
                 android:clickable="true"
                 android:background="#6F47B5FF"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent">
+
 
                 <ImageView
                     android:id="@+id/entranceListImg"

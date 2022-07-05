@@ -3,10 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/backupMenu"
+        android:title="backup"
+        android:icon="@drawable/ic_baseline_backup_24"
+        app:showAsAction="always">
+    </item>
+
+    <item
         android:id="@+id/searchAll"
-        android:title="searchAll"
+        android:title="Search"
         android:icon="@drawable/ic_baseline_search_24"
         app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="withText|ifRoom">
+        app:showAsAction="ifRoom|withText">
     </item>
+
 </menu>

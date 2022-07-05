@@ -9,7 +9,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         Realm.init(getApplicationContext());
-        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).name("Myrealm.realm").build();
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder().allowWritesOnUiThread(true).name("myrealm.realm").build();
         Realm.setDefaultConfiguration(realmConfiguration);
 
         super.onCreate();

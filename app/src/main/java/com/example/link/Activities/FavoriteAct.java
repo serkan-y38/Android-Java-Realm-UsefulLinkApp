@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
@@ -11,6 +11,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
+
+import com.example.link.Adapters.FavAdapter;
+import com.example.link.Models.FavModel;
+import com.example.link.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import io.realm.Realm;

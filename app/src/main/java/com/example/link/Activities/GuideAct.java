@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.example.link.R;
 
 public class GuideAct extends AppCompatActivity {
 

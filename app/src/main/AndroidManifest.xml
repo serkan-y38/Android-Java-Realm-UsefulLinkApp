@@ -4,6 +4,7 @@
     package="com.example.link">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -18,30 +19,30 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".GuideAct"
+            android:name=".Activities.GuideAct"
             android:exported="false"
-            android:parentActivityName=".EntranceAct"/>
+            android:parentActivityName=".Activities.EntranceAct"/>
         <activity
-            android:name=".BinAct"
+            android:name=".Activities.BinAct"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="false"
-            android:parentActivityName=".EntranceAct" />
+            android:parentActivityName=".Activities.EntranceAct" />
         <activity
-            android:name=".DetailPageAct"
+            android:name=".Activities.DetailPageAct"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".AddNewAct"
+            android:name=".Activities.AddNewAct"
             android:exported="false"
-            android:parentActivityName=".EntranceAct" />
+            android:parentActivityName=".Activities.EntranceAct" />
         <activity
-            android:name=".FavoriteAct"
+            android:name=".Activities.FavoriteAct"
             android:exported="false"
-            android:parentActivityName=".EntranceAct" />
+            android:parentActivityName=".Activities.EntranceAct" />
         <activity
-            android:name=".EntranceAct"
+            android:name=".Activities.EntranceAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

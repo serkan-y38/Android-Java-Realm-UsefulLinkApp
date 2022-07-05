@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -9,6 +9,12 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.link.Activities.DetailPageAct;
+import com.example.link.Models.LinkModel;
+import com.example.link.Models.FavModel;
+import com.example.link.R;
+
 import java.util.ArrayList;
 import io.realm.Realm;
 
@@ -65,7 +71,7 @@ public class MainAdapter extends BaseAdapter {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context,DetailPageAct.class);
+                Intent intent=new Intent(context, DetailPageAct.class);
                 intent.putExtra("name",linkName);
                 intent.putExtra("date",linkDate);
                 intent.putExtra("def",def);

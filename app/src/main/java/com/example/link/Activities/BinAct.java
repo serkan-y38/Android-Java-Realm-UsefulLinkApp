@@ -1,10 +1,13 @@
-package com.example.link;
+package com.example.link.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.link.Adapters.BinAdapter;
+import com.example.link.Models.BinModel;
+import com.example.link.R;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -16,7 +19,7 @@ public class BinAct extends AppCompatActivity {
     ListView listView;
     ArrayList<BinModel> listModel=new ArrayList<>();
     Realm realm;
-    BinAdp adapter;
+    BinAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class BinAct extends AppCompatActivity {
         }
 
         if(results.size()>0){
-            adapter=new BinAdp(listModel,getApplicationContext());
+            adapter=new BinAdapter(listModel,getApplicationContext());
             listView.setAdapter(adapter);
         }
     }

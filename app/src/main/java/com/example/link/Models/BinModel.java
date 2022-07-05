@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Models;
 import io.realm.RealmObject;
 
 public class BinModel extends RealmObject {

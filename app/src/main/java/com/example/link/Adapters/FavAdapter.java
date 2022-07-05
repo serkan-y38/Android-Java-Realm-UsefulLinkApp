@@ -1,7 +1,6 @@
-package com.example.link;
+package com.example.link.Adapters;
 import static io.realm.Realm.getApplicationContext;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,6 +12,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.link.Models.FavModel;
+import com.example.link.Activities.FavoriteAct;
+import com.example.link.R;
+
 import java.util.ArrayList;
 import io.realm.Realm;
 
@@ -101,7 +105,7 @@ public class FavAdapter extends BaseAdapter {
     //search item func -----------------------------------------------------------------------------
 
     public void refresh(){
-        Intent intent=new Intent(getApplicationContext(),FavoriteAct.class);
+        Intent intent=new Intent(getApplicationContext(), FavoriteAct.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -18,6 +18,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.link.Adapters.MainAdapter;
+import com.example.link.Models.LinkModel;
+import com.example.link.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;

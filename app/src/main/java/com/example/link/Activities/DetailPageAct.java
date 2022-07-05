@@ -1,13 +1,9 @@
-package com.example.link;
+package com.example.link.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,13 +11,14 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.link.Models.BinModel;
+import com.example.link.Models.LinkModel;
+import com.example.link.R;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class DetailPageAct extends AppCompatActivity {
 

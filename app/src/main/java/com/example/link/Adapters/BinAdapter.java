@@ -1,4 +1,4 @@
-package com.example.link;
+package com.example.link.Adapters;
 import static io.realm.Realm.getApplicationContext;
 import android.content.Context;
 import android.content.Intent;
@@ -9,16 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.link.Activities.BinAct;
+import com.example.link.Models.BinModel;
+import com.example.link.Models.LinkModel;
+import com.example.link.R;
+
 import java.util.ArrayList;
 import io.realm.Realm;
 
-public class BinAdp extends BaseAdapter {
+public class BinAdapter extends BaseAdapter {
 
     ArrayList<BinModel> modelList;
     Context context;
     Realm realm = Realm.getDefaultInstance();
 
-    public BinAdp(ArrayList<BinModel> modelList, Context context) {
+    public BinAdapter(ArrayList<BinModel> modelList, Context context) {
         this.modelList = modelList;
         this.context = context;
     }
@@ -62,7 +68,7 @@ public class BinAdp extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 deleteLinkFunc(linkdate);
-                Intent intent=new Intent(getApplicationContext(),BinAct.class);
+                Intent intent=new Intent(getApplicationContext(), BinAct.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNewAct"
+    tools:context=".Activities.AddNewAct"
     android:background="@color/white_blue">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -77,7 +77,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:hint="Link Topic (optional)">
+                android:hint="Link Topic (required)">
             </EditText>
 
         </LinearLayout>
@@ -118,7 +118,7 @@
             android:id="@+id/linkDefAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Link Definition (required)">
+            android:hint="Link Definition (Optional)">
         </EditText>
 
     </LinearLayout>
